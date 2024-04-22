@@ -21,7 +21,7 @@ export default function Home() {
         <div>
           <LoginButton>
             <Button variant="secondary" size="lg">
-              Sign in
+              Sign ining
             </Button>
           </LoginButton>
         </div>
