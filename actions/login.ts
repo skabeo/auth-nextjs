@@ -14,8 +14,6 @@ export const login = async (values: z.infer<typeof LoginSchema>) => {
     return { error: "Invalid fields!" }
   }
 
-  // return { success: "Login in successful" }
-
   const { email, password } = validatedFields.data;
   try {
     await signIn("credentials", {
@@ -35,4 +33,6 @@ export const login = async (values: z.infer<typeof LoginSchema>) => {
 
     throw error;
   }
+
+  return { success: "Login in successful" }
 }
