@@ -22,9 +22,9 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     async signIn({ user, account }) {
       if (account?.provider !== "credentials") return true;
 
-      const existingUser = getUserById(user.id);
+      // const existingUser = getUserById(user.id);
 
-      if (!existingUser?.emailVerified) return false;
+      if (!user?.emailVerified) return false;
 
       return true;
     },
