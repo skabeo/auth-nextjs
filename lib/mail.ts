@@ -2,6 +2,18 @@ import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESND_API_KEY);
 
+export const sendTwoFactorTokenEmail = async(
+  email: string,
+  token: string,
+) => {
+  await resend.emails.send({
+    from: "onboarding@resend.dev",
+    to: email,
+    subject: "Confirm Email",
+    html: `<p>Your 2FA code <strong>${token}</strong></p>`
+  })
+}
+
 export const sendPasswordResetEmail = async (
   email: string,
   token: string,
@@ -26,6 +38,6 @@ export const sendVerificationEmail = async (
     from: "onboarding@resend.dev",
     to: email,
     subject: "Confirm Email",
-    html: `<p>Click <a href="${confirmLink}">here</a>to confirm email</p>`
+    html: `<p>Click <a href="${confirmLink}">here</a> to confirm email</p>`
   })
 }
