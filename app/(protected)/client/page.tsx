@@ -3,7 +3,7 @@
 import { UserInfo } from "@/components/user-info";
 import { useCurrentUser } from "@/hooks/use-current-user";
 
-const ServerPage = () => {
+const ClientPage = () => {
   const user = useCurrentUser();
   return (
     <div>
@@ -12,4 +12,4 @@ const ServerPage = () => {
   )
 }
 
-export default ServerPage
+export default ClientPage
